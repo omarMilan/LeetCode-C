@@ -1,0 +1,36 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        //declaring
+int x;
+vector<bool> v;
+v.reserve(candies.size());
+int highest = candies[0];
+
+ //find biggest number
+  for(int i = 0;i < candies.size(); ++i) {
+
+    
+    if(highest < candies[i]){
+      highest = candies[i];
+    }
+  }
+  //Stop here
+
+//put true and false
+for(x =0 ; x < candies.size(); ++x ){
+
+if ( (candies[x] + extraCandies) >= highest){
+    v.push_back(true);
+} else{
+    v.push_back(false);
+}
+
+
+}
+//stop here
+
+return v;
+
+    }
+};

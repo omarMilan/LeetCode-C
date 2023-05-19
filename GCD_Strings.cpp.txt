@@ -1,0 +1,45 @@
+class Solution {
+public:
+
+    bool check(string s1,string s2){
+        for(int i = 0;i < s1.length();i++){
+            if(s1[i] != s2[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    string gcdOfStrings(string str1, string str2) {
+        if(str1.length() < str2.length()){
+            string z = str1;
+            cout << "f this" << endl;
+            str1 = str2;
+            str2 = z;
+        }
+        string s1 = "",ans = "";
+        for(int i = 0;i < str2.length();i++){
+            s1 += str2[i];
+            int signal = 0;
+            if(str1.length() % s1.length() == 0){
+                for(int j = 0;j < str1.length();j += s1.length()){
+                    if(!check(s1,str1.substr(j,s1.length()))){
+                        signal = 1;
+                    }
+                }
+                if(str2.length() % s1.length() == 0){
+                    for(int j = 0;j < str2.length();j += s1.length()){
+                        if(!check(s1,str2.substr(j,s1.length()))){
+                            signal = 1;
+                        }
+                    }
+                    if(signal == 0){
+                        ans = s1;
+                    }
+                }   
+                
+            }
+        }
+        return ans;
+    }
+};
