@@ -1,0 +1,39 @@
+//this code will look for letters from the first string inside the second string 
+
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main()
+{
+    string first = "acb";
+    string second = "ahbgdcdwds";
+    int i=0;
+    
+    int counter=0;
+    
+    for(int x=0; x<second.length() ; x++){  //x flip through 'second' while i will check on each letter
+    
+    for(int i=0 ; i < first.length() ; i++ ){
+    
+    if(first[i] == second[x]){
+        counter++;
+        x++;
+    }    
+        
+    }    
+    i=0;
+        
+    }
+    
+    if (counter==first.length()){
+        return true;
+    }else{
+        return false;
+    }
+    
+    return 0;
+}
