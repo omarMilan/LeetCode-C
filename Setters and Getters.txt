@@ -1,0 +1,84 @@
+//Setters and getters
+
+
+#include <iostream>
+
+using namespace std;
+
+class StudentGrade{
+    private:
+    string class_;
+    char grade;
+    
+    public:
+    
+    StudentGrade(string sClass , char sGrade){
+    setClass (sClass);
+    setGrade (sGrade);
+    };
+    
+    //VOIDS or SETTERS
+    void setClass(string sClass){
+    if(sClass=="english" || sClass=="math" ||sClass =="arabic" ||sClass == "science"){
+        class_ = sClass;
+    }else{
+        class_ = "Class invalid";
+    };
+        
+    };
+    
+    void setGrade(char sGrade){
+      if(sGrade=='A' || sGrade=='B' ||sGrade =='C' ||sGrade == 'F'){
+        grade = sGrade;
+    }else{
+        grade = 'F';
+    };
+        
+    };
+    
+    //GETTERS
+    string getClass(){
+      return class_; 
+    };
+    
+    char getGrade(){
+    return grade;
+    };
+    
+    
+    };
+
+
+
+
+int main()
+{
+    string s;
+    char c;
+    
+    StudentGrade sajjad("a",'a');
+    StudentGrade omar("a",'a');
+    StudentGrade ameen("a",'a');
+ 
+ 
+    cout<< "Enter sajjad's class and grade\n";
+    cin >> s >> c;
+    sajjad.setClass(s);
+    sajjad.setGrade(c);
+    
+    cout<< "Enter omar's class and grade\n";
+    cin >> s >> c;
+    omar.setClass(s);
+    omar.setGrade(c);
+  
+    cout<< "Enter ameen's class and grade\n";
+    cin >> s >> c;
+    ameen.setClass(s);
+    ameen.setGrade(c);
+    
+    
+    cout << "Sajjad : \n" <<sajjad.getClass()<<"   " <<sajjad.getGrade() << endl;
+    cout << "Omar : \n" <<omar.getClass()<<"   " <<omar.getGrade() << endl;
+    cout << "Ameen : \n" <<ameen.getClass()<<"   " <<ameen.getGrade() << endl;
+    return 0;
+}
