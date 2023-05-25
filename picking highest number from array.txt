@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int size=8;
+    int test[size]={0,5,8,2,3,10,7,6};
+    int highest = test[0];
+    
+    for(int x =0; x<size ; x++){
+    
+        if(test[x] > highest){
+            highest = test[x];
+        };
+        
+    }
+
+    cout <<"Highest number is " <<highest;
+    return 0;
+}
