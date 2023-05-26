@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int size=1;
+    int* arr = new int [size]; //dynamic array
+    char more;
+    
+   cout<< "This program does dynamic array. Start giving some numbers:\n";
+    for(int x =0; x<size ; x++){
+        cin >> arr[x];
+        cout<< "Do you want to give more arrays? 'y' for yes\n";
+        cin >> more;
+        if(more == 'y'){
+            size++;
+        }
+        
+    };
+
+cout<< "you wrote these following numbers into the array:\n";
+    for (int y = 0; y<size ; y++){
+        cout << arr[y] << " ";
+    };
+
+    return 0;
+}
