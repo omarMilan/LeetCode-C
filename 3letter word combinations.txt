@@ -1,0 +1,34 @@
+//notes
+//swap(hello[2], hello[1]); with string
+
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+   cout<< "this program swaps letters to get all possible combinations for 3 letter words\n";
+   int i =1;
+   int stop=0;
+   string word = "abc"; 
+   cout << word << endl;
+   string original = word;
+   
+    while(word.length()  != stop){
+    
+    for(int x=0 ; x<word.length() -1 ; x++){
+    swap(word[x], word[i]);
+    i++;
+    if (original != word){
+    cout<< word << endl;
+    }
+    
+    }
+    
+    i =1;
+    stop++;
+    }
+    
+    return 0;
+}
