@@ -11,13 +11,13 @@ int main()
     int answer;
     vector<int> numbers;
     vector<int> nums = {1,3,4,2,4,6,7,9};   //VECTOR
-    int target = 15;                        //TARGET
-    int y =1;
-    int x =0;
+    int target = 2;                        //TARGET
+    int y;
+    int x;
     
-    for(x =0 ; x<=nums.size() ; x++){        //first number loop
+    for(x =0 ; x<nums.size() ; x++){        //first number loop
     
-        for( y =1; y<= nums.size() ; y++){   //second number loop
+        for( y =0; y< nums.size() ; y++){   //second number loop
         answer = nums[x] + nums[y];
         
         if(answer==target){                 //if function ends when finds the answer 
@@ -31,7 +31,7 @@ int main()
         
         }                                   //second number for loop close
      
-        y=1;
+        y=0;
     }                                       //first number for loop close
     
     
