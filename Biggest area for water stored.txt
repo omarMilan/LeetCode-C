@@ -1,0 +1,57 @@
+//this code essentially tells us MAXIMUM area of water that can be stored
+//the numbers represent height
+//we get the second biggest number (farthest if 2 or more of those numbers exist) and multiply the distance to the biggest number
+//to get the area
+//for example - 1,3,3,2,5      3 multiplied by (5 minus 2) = 9 = area    
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+        vector<int> height = {1,3,3,5,3,3};
+        int biggest=0;
+        int number1=0;                                                 
+        
+        int temp=0;
+        int number2;
+            
+        int location=0;
+        
+            for(int y =0; y< height.size() ; y++){
+                if(biggest < height[y] ){
+                    biggest =height[y];
+                    number1=y;
+                  
+                }
+                
+            }
+
+      for(int x =0; x< height.size() ; x++){                        //find second biggest
+         if(biggest > temp && biggest != height[x] && temp <= height[x] && number1<number2){
+         temp = height[x];                                      //second biggest
+         number2=x;                                             //location
+         } else if (biggest > temp && biggest != height[x] && temp < height[x] ){
+             temp = height[x];                                      //second biggest
+         number2=x;                                             //location
+         
+         }
+         
+      }
+        
+        if(number2 > number1){
+           location= number2-number1;
+           temp =temp* location;
+        }else if(number2 < number1){
+            location= number1-number2;
+            temp =temp* location;
+        } else{
+            location=1;
+            temp =biggest* location;
+        }
+        
+        
+
+    return temp;
+}
